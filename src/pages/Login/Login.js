@@ -11,14 +11,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispacth = useDispatch();
-  // data va eaduka use pannurom
-  const data = useSelector((state) => state.Loginstore.LoginModel);
   const handleLogin = async (e) => {
     e.preventDefault();
     dispacth(LoginAction({ email, password }));
     setEmail("");
     setPassword("");
   };
+  // data va eaduka use pannurom
+  const data = useSelector((state) => state.Loginstore.LoginModel);
   // console.log(data);
   useEffect(() => {
     if (data && data.data) {
