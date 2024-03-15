@@ -6,4 +6,5 @@ export const CONSTANT = {
       PASSWORD_NAME:"Password:",
       PAGE_ERROR:"Page Note Found",
       CLICK_TO_BACK:"Back to Login Page",
+      DASHBOARD:"Aarave Logu"
 };
