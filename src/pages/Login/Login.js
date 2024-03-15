@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Form, FormGroup } from "react-bootstrap";
 import { LoginAction } from "../../redux/actions/LoginAction";
 import { useNavigate } from "react-router-dom";
+import { CONSTANT } from "../../constant/Index";
 const Login = () => {
   const navicate = useNavigate();
   useEffect(() => {
@@ -19,7 +20,6 @@ const Login = () => {
   };
   // data va eaduka use pannurom
   const data = useSelector((state) => state.Loginstore.LoginModel);
-  // console.log(data);
   useEffect(() => {
     if (data && data.data) {
       if (data.data) {
@@ -29,13 +29,13 @@ const Login = () => {
     }
   }, [data]);
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center py-5 ">
       <div className="card m-5 p-5">
         <div>
-          <h2>Login</h2>
+          <h2>{CONSTANT.LOGIN_NAME}</h2>
           <FormGroup>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email:</Form.Label>
+              <Form.Label>{CONSTANT.EMAIL_NAME}</Form.Label>
               <Form.Control
                 type="text"
                 className="form-control"
@@ -47,7 +47,7 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>{CONSTANT.PASSWORD_NAME}</Form.Label>
               <Form.Control
                 type="password"
                 className="form-control"
@@ -64,7 +64,7 @@ const Login = () => {
               onClick={handleLogin}
               disabled={email.length <= 0 || password.length <= 0}
             >
-              Login
+              {CONSTANT.LOGIN_NAME}
             </Button>
           </FormGroup>
         </div>
